@@ -20,17 +20,17 @@ has_many :orders
 
 ## items テーブル
 
-| Column          | Type       | option                         |
-| --------------- | ---------- | ------------------------------ |
-| item_name       | string     | null: false                    |
-| description     | text       | null: false                    |
-| category_id     | integer    | null: false                    |
-| condition_id    | integer    | null: false                    |
-| prefectures_id  | integer    | null: false                    |
-| sender_add      | integer    | null: false                    |
-| day_to_send     | integer    | null: false                    |
-| price           | integer    | null: false                    |
-| user            | references | null: false, foreign_key: true |
+| Column              | Type       | option                         |
+| ------------------- | ---------- | ------------------------------ |
+| item_name           | string     | null: false                    |
+| description         | text       | null: false                    |
+| category_id         | integer    | null: false                    |
+| condition_id        | integer    | null: false                    |
+| delivery_charge_id  | integer    | null: false                    |
+| prefectures_id      | integer    | null: false                    |
+| day_to_send_id      | integer    | null: false                    |
+| price               | integer    | null: false                    |
+| user                | references | null: false, foreign_key: true |
 
 ### Association
 
