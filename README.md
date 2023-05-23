@@ -5,7 +5,7 @@
 | Column             | Type   | option                                      |
 | ------------------ | ------ | ------------------------------------------- |
 | nick_name          | string | null: false                                 |
-| email              | string | null: false                                 |
+| email              | string | null: false, unique: true                   |
 | encrypted_password | string | null: false                                 |
 | first_name         | string | null: false                                 |
 | last_name          | string | null: false                                 |
@@ -24,9 +24,9 @@ has_many :orders
 | --------------- | ---------- | ------------------------------ |
 | item_name       | string     | null: false                    |
 | description     | text       | null: false                    |
-| category        | integer    | null: false                    |
-| condition       | integer    | null: false                    |
-| delivery_charge | integer    | null: false                    |
+| category_id     | integer    | null: false                    |
+| condition_id    | integer    | null: false                    |
+| prefectures_id  | integer    | null: false                    |
 | sender_add      | integer    | null: false                    |
 | day_to_send     | integer    | null: false                    |
 | price           | integer    | null: false                    |
@@ -52,7 +52,8 @@ belongs_to :item
 ## addresses テーブル
 | Column           | Type       | option                         |
 | post_code        | string     | null: false                    |
-| prefectures      | integer    | null: false                    |
+| prefectures_id   | integer    | null: false                    |
+| city             | string     | null: false                    | 
 | house_number     | string     | null: false                    |
 | building_name    | string     |                                |
 | telephone_number | string     | null:false                     |
@@ -61,6 +62,3 @@ belongs_to :item
 ### Association
 
 belongs_to :order
-
-
-
