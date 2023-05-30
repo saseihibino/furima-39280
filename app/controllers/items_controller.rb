@@ -23,9 +23,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    unless current_user.id == @item.user.id
-      redirect_to action: :index 
-    end
+    return if current_user.id == @item.user.id
+
+    redirect_to action: :index
   end
 
   def update
@@ -36,6 +36,16 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    item = Item.find(params[:id])
+    if user_signed_in? && current_user.id = item.user.id
+      item.destroy
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
+  end
+
   private
 
   def item_params
@@ -43,7 +53,7 @@ class ItemsController < ApplicationController
                                  :day_to_send_id, :price, :image).merge(user_id: current_user.id)
   end
 
-  def set_item 
+  def set_item
     @item = Item.find(params[:id])
   end
 end
