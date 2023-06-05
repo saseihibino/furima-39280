@@ -51,6 +51,7 @@ belongs_to :item
 
 ## addresses テーブル
 | Column           | Type       | option                         |
+| ---------------- | ---------- | ------------------------------ |
 | post_code        | string     | null: false                    |
 | prefecture_id    | integer    | null: false                    |
 | city             | string     | null: false                    | 
