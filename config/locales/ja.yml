@@ -28,4 +28,6 @@ ja:
         house_number: 番地
         telephone_number: 電話番号
         token: クレジットカード情報
+        user_id: ユーザー
+        item_id: 商品
         
